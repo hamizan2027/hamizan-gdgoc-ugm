@@ -1,9 +1,9 @@
 ---
 import MainLayout from "../../layouts/MainLayout.astro";
-import HeroSection from "../../components/astro/HeroSection.astro";
-import CommunityPromise from "../../components/astro/CommunityPromise.astro";
-import CommunityIntroduction from "../../components/astro/CommunityIntroduction.astro";
-import TrackDiscovery from "../../components/astro/TrackDiscovery.astro";
+import HeroSection from "../../components/react/HeroSection.tsx";
+import CommunityPromise from "../../components/react/CommunityPromise.tsx";
+import CommunityIntroduction from "../../components/react/CommunityIntroduction.tsx";
+import TrackDiscovery from "../../components/react/TrackDiscovery.tsx";
 import LearningFormats from "../../components/astro/LearningFormats.astro";
 import ProjectPossibility from "../../components/astro/ProjectPossibility.astro";
 import GettingStarted from "../../components/astro/GettingStarted.astro";
@@ -17,10 +17,10 @@ import SiteFooter from "../../components/astro/SiteFooter.astro";
     title="Open Recruitment 2026/2027"
     description="Find your people, explore a learning track, and build technology that matters with Google Developer Groups on Campus UGM."
 >
-    <HeroSection />
-    <CommunityPromise />
-    <CommunityIntroduction />
-    <TrackDiscovery />
+    <HeroSection client:load />
+    <CommunityPromise client:load />
+    <CommunityIntroduction client:load />
+    <TrackDiscovery client:load />
     <LearningFormats />
     <ProjectPossibility />
     <GettingStarted />
