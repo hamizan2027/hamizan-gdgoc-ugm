@@ -1,16 +1,89 @@
 ---
+// Import global css jika kamu menaruh font Google Sans di sana
+import { ClientRouter } from "astro:transitions";
+import "../styles/global.css";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="sitemap" href="/sitemap-index.xml" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content={Astro.generator} />
+
+        <title>Hacker - Frontend| GDGoC UGM</title>
+        <meta name="title" content="Hacker - Frontend" />
+        <meta name="description" content="GDGoC Project" />
+        <meta
+            name="keywords"
+            content="Google Developer Group, Google Developer Group on Campus UGM, GDG UGM, GDGoC UGM, GDGoC, GDG, Google Developer Group on Campus, Google Developer Group on Campus UGM,"
+        />
+        <meta name="author" content="Hamizan Ihkamuddin Raharjo" />
+        <meta name="robots" content="index, follow" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Hacker - Frontend" />
+        <meta property="og:description" content="GDGoC Project" />
+        <meta property="og:site_name" content="Hamizan | GDGoC UGM" />
+
+        <ClientRouter />
+    </head>
+    <body class="flex min-h-screen flex-col items-center justify-center bg-white px-5 py-12 antialiased">
+        <!-- Logo GDGoC -->
+        <img
+            src="/gdgoc-ugm-logo.png"
+            alt="Google Developer Groups on Campus UGM"
+            width="232"
+            height="128"
+            class="mb-10 h-auto w-28 sm:w-32"
+        />
+
+        <div class="mb-12 flex flex-wrap items-center justify-center gap-4 text-sm font-medium text-[#5F6368] sm:gap-6">
+            <a
+                href="https://github.com/hamizan2027/hamizan-gdgoc-ugm"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="transition-colors hover:text-[#1967D2] hover:underline"
+            >
+                GitHub Repo
+            </a>
+
+            <span
+                class="size-1.5 rounded-full bg-[#DADCE0]"
+                aria-hidden="true"
+            ></span>
+
+            <a
+                href="https://drive.google.com/drive/folders/1ew5eAWv2i-_smxBB50nAy4-OvSFied5J?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="transition-colors hover:text-[#1967D2] hover:underline"
+            >
+                Drive Video
+            </a>
+
+            <span
+                class="size-1.5 rounded-full bg-[#DADCE0]"
+                aria-hidden="true"
+            ></span>
+
+            <a
+                href="https://www.instagram.com/gdgoc.ugm/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="transition-colors hover:text-[#1967D2] hover:underline"
+            >
+                Instagram
+            </a>
+        </div>
+
+        <a
+            href="/home"
+            class="inline-flex min-h-12 items-center justify-center rounded-full border border-[#DADCE0] px-6 text-sm font-semibold text-[#242424] transition-colors hover:bg-[#F8F9FA]"
+        >
+            Go to Home
+        </a>
+    </body>
 </html>
