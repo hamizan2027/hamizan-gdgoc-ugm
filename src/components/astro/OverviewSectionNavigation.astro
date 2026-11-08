@@ -1,0 +1,26 @@
+---
+const sections = [
+    { href: "#learning-tracks", label: "Learning tracks" },
+    { href: "#learning-formats", label: "Learning formats" },
+    { href: "#learning-journey", label: "Your learning journey" },
+    { href: "#starting-point", label: "Find a starting point" },
+];
+---
+
+<nav aria-label="Overview sections" class="border-y border-[#DADCE0] bg-white">
+    <ul class="mx-auto flex max-w-7xl flex-wrap gap-x-7 gap-y-3 px-5 py-5 sm:px-8 lg:gap-x-10 lg:px-12">
+        {sections.map((section, index) => (
+            <li
+                class:list={[
+                    " min-h-9 items-center text-sm font-semibold transition-colors hover:text-[#1967D2]",
+                    index === 0 ? "text-[#1967D2]" : "text-[#5F6368]",
+                ]}
+            >
+                <a href={section.href} class="inline-flex gap-2">
+                    {section.label}
+                    <span aria-hidden="true">↓</span>
+                </a>
+            </li>
+        ))}
+    </ul>
+</nav>

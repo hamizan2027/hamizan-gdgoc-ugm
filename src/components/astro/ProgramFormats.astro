@@ -1,0 +1,74 @@
+---
+const programs = [
+    {
+        icon: "01",
+        title: "Study groups",
+        description:
+            "Build foundations with peers. Work through a topic, compare approaches, and make space for questions.",
+        bestFor: "Learning the fundamentals",
+    },
+    {
+        icon: "02",
+        title: "Hands-on workshops",
+        description:
+            "Get introduced to a tool or method, follow a practical exercise, and take away something to keep exploring.",
+        bestFor: "Trying something new",
+    },
+    {
+        icon: "03",
+        title: "Project circles",
+        description:
+            "Connect research, design, and development around a shared problem. Learn through making and feedback.",
+        bestFor: "Putting skills into practice",
+    },
+    {
+        icon: "04",
+        title: "Knowledge sharing",
+        description:
+            "Walk through an idea, share a lesson from your process, and discover how other students approach their work.",
+        bestFor: "Exchanging perspectives",
+    },
+];
+---
+
+<section id="learning-formats" class="scroll-mt-24 bg-[#F1F3F4]">
+    <div class="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20 lg:px-12">
+        <div class="max-w-3xl">
+            <p class="inline-flex items-center gap-2 rounded-full text-sm text-[#5F6368] uppercase">
+                <span
+                    class="size-2 rounded-full bg-[#1967D2]"
+                    aria-hidden="true"
+                ></span>
+                Ways to learn
+            </p>
+            <h2 class="mt-4 text-4xl leading-tight font-bold tracking-[-0.035em] text-[#242424] sm:text-5xl">
+                The format changes. The curiosity stays.
+            </h2>
+            <p class="mt-5 text-base leading-7 text-[#5F6368] sm:text-lg sm:leading-8">
+                Explore the kinds of experiences that help you move from
+                understanding to doing.
+            </p>
+        </div>
+
+        <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:gap-5">
+            {programs.map((program) => (
+                <article class="grid gap-5 rounded-3xl bg-white p-5 sm:grid-cols-[100px_1fr] sm:gap-6 sm:p-7">
+                    <div class="flex items-start sm:justify-center font-bold text-[#1967D2] text-4xl pt-1">
+                        {program.icon}
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-[#242424]">
+                            {program.title}
+                        </h3>
+                        <p class="mt-2 text-sm leading-6 text-[#5F6368] sm:text-base">
+                            {program.description}
+                        </p>
+                        <p class="mt-5 border-t border-[#DADCE0] pt-4 text-xs font-semibold text-[#1967D2]">
+                            Best for · {program.bestFor}
+                        </p>
+                    </div>
+                </article>
+            ))}
+        </div>
+    </div>
+</section>
