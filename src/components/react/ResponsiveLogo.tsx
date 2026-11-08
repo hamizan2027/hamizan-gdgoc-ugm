@@ -1,22 +1,19 @@
-import { useMediaQuery } from 'react-responsive'
-
-
 export default function ResponsiveLogo() {
-  const isDesktopOrLaptop = useMediaQuery({
-    query: '(min-width: 1224px)'
-  });
-
   return (
     <div>
       <a href="/home" className="shrink-0" aria-label="GDGoC UGM home">
+        <picture>
+          <source media="(min-width: 1224px)" srcSet="/gdgoc-ugm-logo-desktop.png" />
+
           <img
-              src={isDesktopOrLaptop ?  "/gdgoc-ugm-logo-desktop.png" : "/gdgoc-ugm-logo.png"}
-              alt="Google Developer Groups on Campus UGM"
-              width="116"
-              height="64"
-              className="h-8 w-auto"
+            src="/gdgoc-ugm-logo.png"
+            alt="Google Developer Groups on Campus UGM"
+            width="116"
+            height="64"
+            className="h-8 w-auto"
           />
+        </picture>
       </a>
-  </div>
+    </div>
   );
-};
+}
