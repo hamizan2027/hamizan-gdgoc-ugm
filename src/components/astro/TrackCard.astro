@@ -1,0 +1,64 @@
+---
+interface Props {
+    image: string;
+    imageAlt: string;
+    eyebrow: string;
+    title: string;
+    description: string;
+    topics: string;
+    tone: "blue" | "yellow" | "green";
+}
+
+const { image, imageAlt, eyebrow, title, description, topics, tone } =
+    Astro.props;
+
+const toneClasses = {
+    blue: {
+        surface: "bg-[#EAF2FF]",
+        text: "text-[#1967D2]",
+    },
+    yellow: {
+        surface: "bg-[#FFF7DF]",
+        text: "text-[#8A5D00]",
+    },
+    green: {
+        surface: "bg-[#EAF5ED]",
+        text: "text-[#188038]",
+    },
+};
+
+const toneClass = toneClasses[tone];
+---
+
+<article class="flex h-full flex-col overflow-hidden rounded-3xl border border-[#DADCE0] bg-white">
+    <div
+        class:list={[
+            "flex h-56 items-center justify-center p-6",
+            toneClass.surface,
+        ]}
+    >
+        <img
+            src={image}
+            alt={imageAlt}
+            width="465"
+            height="447"
+            class="h-full w-full object-contain"
+            loading="lazy"
+        />
+    </div>
+    <div class="flex flex-1 flex-col p-6 sm:p-7">
+        <p class:list={["text-sm font-semibold", toneClass.text]}>{eyebrow}</p>
+        <h3 class="mt-2 text-2xl font-bold tracking-tight text-[#242424]">
+            {title}
+        </h3>
+        <p class="mt-3 flex-1 text-sm leading-6 text-[#5F6368] sm:text-base sm:leading-7">
+            {description}
+        </p>
+        <p class="mt-6 border-t border-[#DADCE0] pt-4 text-xs leading-5 text-[#5F6368]">
+            {topics}
+        </p>
+        <a class="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-[#1967D2] hover:underline">
+            Explore this track <span aria-hidden="true">→</span>
+        </a>
+    </div>
+</article>

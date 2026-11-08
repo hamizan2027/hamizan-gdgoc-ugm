@@ -1,0 +1,72 @@
+---
+import TrackCard from "./TrackCard.astro";
+
+const tracks = [
+    {
+        image: "/research-track-artwork.svg",
+        imageAlt: "Research and discovery pathway illustration",
+        eyebrow: "Explore the why",
+        title: "Research & discovery",
+        description:
+            "Ask better questions, understand people, and turn insight into a clear problem worth solving.",
+        topics: "Problem framing · User research · Product thinking",
+        tone: "blue" as const,
+    },
+    {
+        image: "/design-track-artwork.svg",
+        imageAlt: "Design and creativity pathway illustration",
+        eyebrow: "Make it meaningful",
+        title: "Design & creativity",
+        description:
+            "Translate ideas into thoughtful experiences, from a first sketch to a prototype people can use.",
+        topics: "UI/UX · Visual storytelling · Prototyping",
+        tone: "yellow" as const,
+    },
+    {
+        image: "/development-track-artwork.svg",
+        imageAlt: "Development pathway illustration",
+        eyebrow: "Bring ideas to life",
+        title: "Development",
+        description:
+            "Learn the tools, write the code, and build useful things with people who enjoy figuring it out.",
+        topics: "Web & mobile · Cloud · AI foundations",
+        tone: "green" as const,
+    },
+];
+---
+
+<section id="tracks" class="bg-[#F8F9FA]">
+    <div class="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-24 lg:px-12">
+        <div class="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
+            <div class="max-w-2xl">
+                <p class="inline-flex items-center gap-2 rounded-full text-sm text-[#5F6368] uppercase">
+                    <span
+                        class="size-2 rounded-full bg-[#1967D2]"
+                        aria-hidden="true"
+                    ></span>
+                    Find your starting point
+                </p>
+                <h2 class="mt-4 text-4xl leading-tight font-bold tracking-[-0.035em] text-[#242424] sm:text-5xl">
+                    Many interests.
+                    <br class="hidden sm:block" /> One shared journey.
+                </h2>
+                <p class="mt-5 max-w-xl text-base leading-7 text-[#5F6368]">
+                    Follow what excites you. Explore a track, then connect the
+                    dots with others.
+                </p>
+            </div>
+            <a
+                href="/overview"
+                class="inline-flex shrink-0 items-center gap-2 text-sm font-semibold text-[#1967D2] hover:underline"
+            >
+                See the overview <span aria-hidden="true">→</span>
+            </a>
+        </div>
+
+        <div class="mt-10 grid items-stretch gap-5 md:grid-cols-3 lg:gap-6">
+            {tracks.map((track) => (
+                <TrackCard {...track} />
+            ))}
+        </div>
+    </div>
+</section>

@@ -1,0 +1,66 @@
+---
+const formats = [
+    {
+        title: "Study together",
+        description:
+            "Work through foundations in peer learning sessions. Bring your questions; leave with a next step.",
+        format: "Study groups & guided practice",
+        color: "text-[#1967D2]",
+        badge: "bg-[#EAF2FF]",
+    },
+    {
+        title: "Try it hands-on",
+        description:
+            "Explore a tool or technique in a workshop, then put it to work in a small experiment.",
+        format: "Workshops & technical sessions",
+        color: "text-[#1967D2]",
+        badge: "bg-[#EAF5ED]",
+    },
+    {
+        title: "Share the process",
+        description:
+            "Exchange feedback, explain your decisions, and learn from different ways of thinking.",
+        format: "Project circles & sharing sessions",
+        color: "text-[#1967D2]",
+        badge: "bg-[#FCE8E6]",
+    },
+];
+---
+
+<section class="bg-[#F1F3F4]">
+    <div class="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-24 lg:px-12">
+        <div class="max-w-2xl">
+            <p class="inline-flex items-center gap-2 rounded-full text-sm text-[#5F6368] uppercase">
+                <span
+                    class="size-2 rounded-full bg-[#1967D2]"
+                    aria-hidden="true"
+                ></span>
+                More than a classroom
+            </p>
+            <h2 class="mt-4 text-4xl leading-tight font-bold tracking-[-0.035em] text-[#242424] sm:text-5xl">
+                Less watching. More making.
+            </h2>
+            <p class="mt-5 text-base leading-7 text-[#5F6368]">
+                Learn in a way that turns a new concept into something you can
+                actually use.
+            </p>
+        </div>
+        <div class="mt-10 grid gap-4 md:grid-cols-3">
+            {formats.map((format) => (
+                <article class="rounded-3xl bg-white p-6 sm:p-7">
+                    <h3 class="text-xl font-bold text-[#242424]">
+                        {format.title}
+                    </h3>
+                    <p class="mt-3 min-h-20 text-sm leading-6 text-[#5F6368]">
+                        {format.description}
+                    </p>
+                    <p
+                        class={`mt-5 border-t border-[#DADCE0] pt-4 text-xs font-semibold ${format.color}`}
+                    >
+                        {format.format}
+                    </p>
+                </article>
+            ))}
+        </div>
+    </div>
+</section>

@@ -1,0 +1,49 @@
+---
+const questions = [
+    {
+        question: "Do I need to know how to code?",
+        answer: "No. Start with an interest in technology and a willingness to learn. Research and design are part of the journey, too.",
+    },
+    {
+        question: "Is this only for computer science students?",
+        answer: "Different disciplines bring different perspectives. Explore the overview to find a starting point that fits your interests.",
+    },
+    {
+        question: "How can I find learning opportunities?",
+        answer: "Keep an eye on @gdgoc.ugm for community updates. You can also use the contact page to ask about getting involved.",
+    },
+];
+---
+
+<section class="mx-auto grid w-full max-w-7xl gap-10 px-5 py-20 sm:px-8 sm:py-24 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20 lg:px-12">
+    <div class="max-w-md">
+        <p class="inline-flex items-center gap-2 rounded-full text-sm text-[#5F6368] uppercase">
+            <span
+                class="size-2 rounded-full bg-[#1967D2]"
+                aria-hidden="true"
+            ></span>
+            A few good questions
+        </p>
+        <h2 class="mt-4 text-4xl leading-tight font-bold tracking-[-0.035em] text-[#242424] sm:text-5xl">
+            Wondering where to begin?
+        </h2>
+        <a
+            href="https://www.instagram.com/gdgoc.ugm/"
+            class="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-[#1967D2] hover:underline"
+        >
+            Ask us a question <span aria-hidden="true">→</span>
+        </a>
+    </div>
+    <div>
+        {questions.map((item) => (
+            <article class="border-b border-[#DADCE0] py-6 first:pt-0">
+                <h3 class="text-lg font-semibold text-[#242424]">
+                    {item.question}
+                </h3>
+                <p class="mt-3 max-w-2xl text-sm leading-6 text-[#5F6368]">
+                    {item.answer}
+                </p>
+            </article>
+        ))}
+    </div>
+</section>
