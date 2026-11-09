@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import HeaderImage from "./HeaderImage";
 
 export default function HeroSection() {
     const containerRef = useRef<HTMLElement>(null);
@@ -85,15 +86,8 @@ export default function HeroSection() {
             <div className="gsap-image-reveal relative mx-auto w-full max-w-xl">
                 <div className="absolute -left-4 top-12 size-40 rounded-full bg-[#EAF2FF] sm:-left-8 sm:size-40 blur-xl"></div>
                 <div className="absolute -right-2 bottom-10 size-44 rounded-full bg-[#FFF7DF] sm:-right-6 sm:size-48 blur-xl"></div>
-                <div className="relative rounded-[2rem] bg-[#F8F9FA]">
-                    <img
-                        src="/glass-tile-artwork.png"
-                        alt="Hero artwork"
-                        width="600"
-                        height="600"
-                        className="h-auto w-full"
-                    />
-                </div>
+
+                <HeaderImage/>
             </div>
         </section>
     );

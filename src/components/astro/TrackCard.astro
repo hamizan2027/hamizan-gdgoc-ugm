@@ -16,14 +16,17 @@ const toneClasses = {
     blue: {
         surface: "bg-[#EAF2FF]",
         text: "text-[#1967D2]",
+        shadow: "drop-shadow-[0_0_35px_rgba(25,103,210,0.7)]",
     },
     yellow: {
         surface: "bg-[#FFF7DF]",
         text: "text-[#8A5D00]",
+        shadow: "drop-shadow-[0_0_35px_rgba(138,93,0,0.7)]",
     },
     green: {
         surface: "bg-[#EAF5ED]",
         text: "text-[#188038]",
+        shadow: "drop-shadow-[0_0_35px_rgba(24,128,56,0.7)]",
     },
 };
 
@@ -42,7 +45,7 @@ const toneClass = toneClasses[tone];
             alt={imageAlt}
             width="465"
             height="447"
-            class="h-full w-full object-contain"
+            class:list={["h-full w-full object-contain", toneClass.shadow]}
             loading="lazy"
         />
     </div>
